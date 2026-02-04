@@ -56,7 +56,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
                 </Typography>
               </li>
             )}
-             {pages.map(({ icon, name, path }) => {
+             {pages.map(({ icon, iconactive, name, path }) => {
               if (path!== '/sign-in' && path!=='/sign-out') {
                 //todo sign out here
                 return (
@@ -64,7 +64,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
                     <NavLink to={`/${layout}${path}`}>
                       {({ isActive }) => (
                         <Button
-                          variant={isActive ? "gradient" : "gradient"}
+                          variant={isActive ? "gradient" : "text"}
                           color={
                             isActive
                               ? "deep-purple"
@@ -75,7 +75,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
                           className="flex items-center gap-4 px-4 capitalize"
                           fullWidth
                         >
-                          {icon}
+                          {isActive? iconactive : icon}
                           <Typography
                             color="inherit"
                             className="font-medium capitalize"
