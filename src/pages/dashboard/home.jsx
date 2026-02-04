@@ -21,7 +21,7 @@ export function Home() {
   const [early, setEarly] = useState([])
 
   const getEarly = async () => {      
-    await axios.get('https://inarconsapi.indomaber.com/early')
+    await axios.get('https://tengtengapi.indomaber.com/early')
       .then(response => {
         setEarly(response.data);
         console.log(response.data)
@@ -43,7 +43,7 @@ export function Home() {
             <Typography variant="h6" color="white">
               Early Access Registrant
             </Typography>
-            <a href="https://inarconsapi.indomaber.com/downloadcsv">
+            <a href="https://tengtengapi.indomaber.com/downloadcsv">
               <Button color="green">Download Excel</Button>
             </a>
           </div>

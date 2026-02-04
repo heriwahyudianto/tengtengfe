@@ -39,7 +39,7 @@ export function ProfHome() {
   const [showSpinner, setShowSpinner] = useState(false);
 
   const getEarly = async () => {      
-    await axios.get('https://inarconsapi.indomaber.com/allpro')
+    await axios.get('https://tengtengapi.indomaber.com/allpro')
       .then(response => {
         setEarly(response.data);
         console.log(response.data)
@@ -176,7 +176,7 @@ export function ProfHome() {
                   imgdata.append('address', address);   
                   imgdata.append('phone', phone); 
                   imgdata.append('tagline', tagline);   
-                  await axios.post('https://inarconsapi.indomaber.com/pro/addfromadmin', imgdata, {
+                  await axios.post('https://tengtengapi.indomaber.com/pro/addfromadmin', imgdata, {
                     headers: {
                       'accept': 'application/json',
                       'Accept-Language': 'en-US,en;q=0.8',
@@ -237,7 +237,7 @@ export function ProfHome() {
                       <td className={className}>
                         <div className="flex justify-start items-center gap-2">
                           <div className="aspect-square rounded-full object-cover object-center overflow-hidden shadow-md">
-                            <img src={`https://inarconsapi.indomaber.com/logo/${logo}`} alt="" className="h-12 w-auto aspect-square rounded-full object-cover object-center" />
+                            <img src={`https://tengtengapi.indomaber.com/logo/${logo}`} alt="" className="h-12 w-auto aspect-square rounded-full object-cover object-center" />
                           </div>
                           <div>
                             <Typography
@@ -414,7 +414,7 @@ export function ProfHome() {
                 imgdata.append('phone', phone);     
                 imgdata.append('id', selectedId);
                 imgdata.append('tagline', tagline); 
-                await axios.put('https://inarconsapi.indomaber.com/pro/editfromadmin', imgdata, {
+                await axios.put('https://tengtengapi.indomaber.com/pro/editfromadmin', imgdata, {
                   headers: {
                     'accept': 'application/json',
                     'Accept-Language': 'en-US,en;q=0.8',
@@ -464,7 +464,7 @@ export function ProfHome() {
             size="sm" 
             onClick={async ()=>{
               setShowSpinner(true);
-              await axios.delete(`https://inarconsapi.indomaber.com/pro/delfromadmin`,{
+              await axios.delete(`https://tengtengapi.indomaber.com/pro/delfromadmin`,{
                 headers: {},
                 data: {
                   email: selectedEmail

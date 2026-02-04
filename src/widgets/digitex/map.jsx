@@ -67,7 +67,7 @@ export function Map() {
 
   const getMap = async () => {  
     setShowSpinner(true);
-    await axios.get(`https://inarconsapi.indomaber.com/digitex/fe/${params.eventname}`)
+    await axios.get(`https://tengtengapi.indomaber.com/digitex/fe/${params.eventname}`)
     .then(response => {      
       console.log("nama event", response.data)
       if (response.data.length > 0) {
@@ -84,7 +84,7 @@ export function Map() {
       console.error(error);
     });
     /*
-    await axios.get(`https://inarconsapi.indomaber.com/digitex/arsir/${params.eventname}`)
+    await axios.get(`https://tengtengapi.indomaber.com/digitex/arsir/${params.eventname}`)
     .then(response => {    
       if (response.data.length > 0) {
         let dataarsir = []
@@ -116,7 +116,7 @@ export function Map() {
 
   const getDetail = async (idx) => {
     setaction3Spinner(true)
-    await axios.get(`https://inarconsapi.indomaber.com/digitex/map/${idx}/digitexid/${mapexist[0].id}`)
+    await axios.get(`https://tengtengapi.indomaber.com/digitex/map/${idx}/digitexid/${mapexist[0].id}`)
     .then(response => {      
       console.log('map server',response.data)
       if (response.data.length > 0) {
@@ -216,7 +216,7 @@ export function Map() {
   ];
 
   const getArsir = async () => {
-    await axios.get(`https://inarconsapi.indomaber.com/digitex/arsir/${mapexist[0].id}`)
+    await axios.get(`https://tengtengapi.indomaber.com/digitex/arsir/${mapexist[0].id}`)
       .then(response => {    
         if (response.data.length > 0) {
           let dataarsir = []
@@ -242,7 +242,7 @@ export function Map() {
     <>
     <div className="relative mt-10">
       <Spinner color="deep-purple" size="md" className={showSpinner? '': 'hidden'} ></Spinner>            
-      <img src={`https://inarconsapi.indomaber.com/digitex/${url}`} className="w-full h-auto object-contain " alt=""/>
+      <img src={`https://tengtengapi.indomaber.com/digitex/${url}`} className="w-full h-auto object-contain " alt=""/>
       <div className={`absolute left-0 right-0 top-0 bottom-0 grid `}
         style={{gridTemplateColumns: `repeat(${col}, minmax(0, 1fr))`}}
       >
@@ -254,7 +254,7 @@ export function Map() {
                   if (arsir.includes(id)) {
                     //setid(id)  
                     setaction3Spinner(true)
-                    await axios.get(`https://inarconsapi.indomaber.com/digitex/map/${id}/digitexid/${mapexist[0].id}`)
+                    await axios.get(`https://tengtengapi.indomaber.com/digitex/map/${id}/digitexid/${mapexist[0].id}`)
                     .then(response => {      
                       console.log('map server',response.data)
                       if (response.data.length > 0) {
@@ -336,7 +336,7 @@ export function Map() {
               </div>
               <div className="mt-2 md:ml-6">
                 {logo &&
-                  <img src={`https://inarconsapi.indomaber.com/digitex/${logo}`} alt="" className="h-20 w-auto object-cover object-center" />
+                  <img src={`https://tengtengapi.indomaber.com/digitex/${logo}`} alt="" className="h-20 w-auto object-cover object-center" />
                 }
               </div>
               <div className="mt-2 md:ml-6">
@@ -365,7 +365,7 @@ export function Map() {
               </div>
               {catalogURL && 
                 <div className="mt-2 md:ml-6">
-                  <a href={`https://inarconsapi.indomaber.com/digitex/${catalogURL}`} download
+                  <a href={`https://tengtengapi.indomaber.com/digitex/${catalogURL}`} download
                   target="_blank" rel="noopener noreferrer" className="flex justify-start gap-1 items-center text-black">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className="w-4 h-4">
                     <path d="M0 64C0 28.7 28.7 0 64 0L213.5 0c17 0 33.3 6.7 45.3 18.7L365.3 125.3c12 12 18.7 28.3 18.7 45.3L384 448c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm208-5.5l0 93.5c0 13.3 10.7 24 24 24L325.5 176 208 58.5zM175 441c9.4 9.4 24.6 9.4 33.9 0l64-64c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-23 23 0-86.1c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 86.1-23-23c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64z"/></svg>
@@ -375,7 +375,7 @@ export function Map() {
               }
               {brochureURL && 
                 <div className="mt-2 md:ml-6">
-                  <a href={`https://inarconsapi.indomaber.com/digitex/${brochureURL}`} download
+                  <a href={`https://tengtengapi.indomaber.com/digitex/${brochureURL}`} download
                   target="_blank" rel="noopener noreferrer" className="flex justify-start gap-1 items-center text-black">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className="w-4 h-4">
                     <path d="M0 64C0 28.7 28.7 0 64 0L213.5 0c17 0 33.3 6.7 45.3 18.7L365.3 125.3c12 12 18.7 28.3 18.7 45.3L384 448c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm208-5.5l0 93.5c0 13.3 10.7 24 24 24L325.5 176 208 58.5zM175 441c9.4 9.4 24.6 9.4 33.9 0l64-64c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-23 23 0-86.1c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 86.1-23-23c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64z"/></svg>
@@ -385,7 +385,7 @@ export function Map() {
               }
               {pricelistURL && 
                 <div className="mt-2 md:ml-6">
-                  <a href={`https://inarconsapi.indomaber.com/digitex/${pricelistURL}`} download
+                  <a href={`https://tengtengapi.indomaber.com/digitex/${pricelistURL}`} download
                   target="_blank" rel="noopener noreferrer" className="flex justify-start gap-1 items-center text-black">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" className="w-4 h-4">
                     <path d="M0 64C0 28.7 28.7 0 64 0L213.5 0c17 0 33.3 6.7 45.3 18.7L365.3 125.3c12 12 18.7 28.3 18.7 45.3L384 448c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64zm208-5.5l0 93.5c0 13.3 10.7 24 24 24L325.5 176 208 58.5zM175 441c9.4 9.4 24.6 9.4 33.9 0l64-64c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-23 23 0-86.1c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 86.1-23-23c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64z"/></svg>

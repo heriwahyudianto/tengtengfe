@@ -22,7 +22,7 @@ export function HashtagHome() {
 
   const getHashtag = async () => {
     setshowSpinner(true)
-    await axios.get('https://inarconsapi.indomaber.com/hashtag')
+    await axios.get('https://tengtengapi.indomaber.com/hashtag')
     .then(response => {      
       console.log('hashatg',response.data)
       if (response.data.length > 0) {
@@ -101,7 +101,7 @@ export function HashtagHome() {
                 disabled={addHashtag.length < 2}
                 onClick={async()=>{
                   setshowSpinner(true)
-                  await axios.post('https://inarconsapi.indomaber.com/hashtag', {
+                  await axios.post('https://tengtengapi.indomaber.com/hashtag', {
                     hashtag: addHashtag,
                   })
                   .then(response => {
@@ -176,7 +176,7 @@ export function HashtagHome() {
                       disabled={showSpinner}
                       onClick={async()=>{
                         setshowSpinner(true)
-                        await axios.delete(`https://inarconsapi.indomaber.com/hashtag`,{
+                        await axios.delete(`https://tengtengapi.indomaber.com/hashtag`,{
                           headers: {},
                           data: {
                             id: id,
@@ -228,7 +228,7 @@ export function HashtagHome() {
             disabled={showSpinner}
             onClick={async()=>{
               setshowSpinner(true)
-              await axios.put('https://inarconsapi.indomaber.com/hashtag', {
+              await axios.put('https://tengtengapi.indomaber.com/hashtag', {
                 hashtag: addHashtag,
                 oldhashtag: oldHashtag,
                 id:hashtagId

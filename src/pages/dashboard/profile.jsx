@@ -33,7 +33,7 @@ export function Profile() {
   const [searchParams] = useSearchParams();
 
   const getRegistrant = async (id) => {      
-    await axios.get(`https://inarconsapi.indomaber.com/registrant/${id}`)
+    await axios.get(`https://tengtengapi.indomaber.com/registrant/${id}`)
       .then(response => {
         setRegistrant(response.data.registrant[0]);
         setsetDesiredFeature(response.data.desiredfeature)

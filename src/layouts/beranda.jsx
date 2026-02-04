@@ -24,7 +24,7 @@ export function Beranda() {
   const getDigitex = async () => {
     setShowSpinner(true);
     try { 
-      await axios.get(`https://inarconsapi.indomaber.com/digitex/fe`)
+      await axios.get(`https://tengtengapi.indomaber.com/digitex/fe`)
       .then(async response => {
         console.log('digitex from server:', response.data);       
         if (response.data.length > 0) {
@@ -81,7 +81,7 @@ export function Beranda() {
               {digitex.map((item, idx)=>
                 <Card key={idx} shadow={true} variant="filled">
                   <CardBody className="p-4">
-                    <img src={item.logo == null ? def : `https://inarconsapi.indomaber.com/digitex/${item.logo}`} 
+                    <img src={item.logo == null ? def : `https://tengtengapi.indomaber.com/digitex/${item.logo}`} 
                       className="w-full object-contain h-auto aspect-square rounded-lg" alt={item.eventname} />                
                     <Typography variant="paragraph" className="text-black mb-1 mt-2 text-xs font-normal">                
                     {moment(item.date).format('D MMM YYYY')} 
